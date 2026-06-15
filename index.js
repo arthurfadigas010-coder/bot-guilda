@@ -3,12 +3,10 @@ const qrcode = require('qrcode-terminal');
 
 const client = new Client({
     authStrategy: new LocalAuth(),
-    puppeteer: {
-        executablePath: 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+puppeteer: {
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     }
 });
-
 const palavrasProibidas = ['macaco', 'filho da puta', 'fdp', 'filho da p'];
 
 client.on('qr', (qr) => {
