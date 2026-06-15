@@ -1,12 +1,12 @@
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
-
 const client = new Client({
-    authStrategy: new LocalAuth(),
-puppeteer: {
+    puppeteer: {
+        executablePath: '/usr/bin/google-chrome',
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     }
 });
+
 const palavrasProibidas = ['macaco', 'filho da puta', 'fdp', 'filho da p'];
 
 client.on('qr', (qr) => {
